@@ -1,0 +1,29 @@
+//
+   Created by gavin on 27/07/2016.
+extends ../custom
+block title
+  title 文章列表
+block styles
+  link(rel='stylesheet' href='/vendor/wangEditor/css/wangEditor.min.css')
+block body
+  .container(style='margin-top: 30px;')
+    h2 文章列表
+    a.btn.btn-primary(href='/article/add') 新增文章
+    table.table.table-bordered
+      tr
+        th 标题
+        th 关键字
+        th 描述
+        th 摘要
+        th 操作
+      each article in articles
+        tr
+          td.nowrap= article.title
+          td.nowrap= article.keywords
+          td.nowrap= article.description
+          td.nowrap= article.summary
+          td
+            a(href='/article/detail/'+article.id) 详情
+
+block javascript
+  script(charset='UTF-8' src='/vendor/wangEditor/js/wangEditor.js')

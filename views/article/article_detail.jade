@@ -1,0 +1,20 @@
+//
+   Created by gavin on 27/07/2016.
+extends ../custom
+block meta
+  meta(name='keywords' content=article.keywords)
+  meta(name='description' content=article.description)
+block title
+  title 添加文章
+block styles
+  link(rel='stylesheet' href='/vendor/wangEditor/css/wangEditor.min.css')
+block body
+  .container(style='margin-top: 30px;')
+    a.btn.btn-primary(href='/article/list') 返回
+    h2=article.title
+    div!=article.content
+
+
+block javascript
+  script(charset='UTF-8' src='/vendor/wangEditor/js/wangEditor.js')
+  script(charset='UTF-8' src='/articles/article.js')
